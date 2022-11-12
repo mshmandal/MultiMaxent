@@ -28,7 +28,7 @@ get_species <- function(species,ext,limit=500){
 #' Combine multiple species occ data
 #'
 #' @param species A list of species name
-#' @param ... Arguments for get_species function
+#' @param ... Arguments from get_species function
 #'
 #' @return A list of data frames
 #' @export

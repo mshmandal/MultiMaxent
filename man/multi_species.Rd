@@ -9,7 +9,7 @@ multi_species(species, ...)
 \arguments{
 \item{species}{A list of species name}
 
-\item{...}{Arguments for get_species function}
+\item{...}{Arguments from get_species function}
 }
 \value{
 A list of data frames

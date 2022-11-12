@@ -3,8 +3,8 @@
 #' @param name name of the data; valid arguments are "tmin", "tmax","tavg",
 #' "precipitation", "srad","wspeed","wvapor", "bio","elevation". Check
 #' worldclim website for more information.
-#' @param wd current working directory path; do not forget trailing slash
-#' @param ext xmin,xmax,ymin,ymax
+#' @param wd defaults to current working directory; do not forget trailing slash
+#' @param ext xmin,xmax,ymin,ymax; default set at c(88,90,20,25)
 #'
 #' @return A SpatRaster object cropped by ext
 #' @export
@@ -16,9 +16,9 @@
 #' # The raster package has a useful function getData() which performs much
 #' # more than current functionality here. So, do check that one.
 #'
-#' get_worldclim(name="elevation",wd="./",ext=c(88,90,20,25))
+#' get_worldclim(name="elevation",wd="./",ext=c(87,94,20,27))
 #'
-get_worldclim <-function(name,wd,ext){
+get_worldclim <-function(name,wd="./",ext=c(87,94,20,27)){
   # increase timeout time and method for download
   options(download.file.method="libcurl")
   options(timeout=600) # 10 minutes
@@ -42,7 +42,6 @@ get_worldclim <-function(name,wd,ext){
   )
 
   # directory management
-  wd<- wd
   data_dir<- name
   # if not exit, create new directory
   dir.create(paste0(wd,"/",name))

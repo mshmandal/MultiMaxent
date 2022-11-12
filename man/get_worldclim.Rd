@@ -4,16 +4,16 @@
 \alias{get_worldclim}
 \title{Download data from worldclim_v_2.1}
 \usage{
-get_worldclim(name, wd, ext)
+get_worldclim(name, wd = "./", ext = c(87, 94, 20, 27))
 }
 \arguments{
 \item{name}{name of the data; valid arguments are "tmin", "tmax","tavg",
 "precipitation", "srad","wspeed","wvapor", "bio","elevation". Check
 worldclim website for more information.}
 
-\item{wd}{current working directory path; do not forget trailing slash}
+\item{wd}{defaults to current working directory; do not forget trailing slash}
 
-\item{ext}{xmin,xmax,ymin,ymax}
+\item{ext}{xmin,xmax,ymin,ymax; default set at c(88,90,20,25)}
 }
 \value{
 A SpatRaster object cropped by ext
@@ -28,6 +28,6 @@ Download data from worldclim_v_2.1
 # The raster package has a useful function getData() which performs much
 # more than current functionality here. So, do check that one.
 
-get_worldclim(name="elevation",wd="./",ext=c(88,90,20,25))
+get_worldclim(name="elevation",wd="./",ext=c(87,94,20,27))
 
 }
